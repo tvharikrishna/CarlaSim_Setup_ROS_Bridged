@@ -117,6 +117,33 @@ To address this, we have outlined some common errors and their respective troubl
 
 ## ERROR 1 == HARI KRISHNA LOL
 
+<p align="center">
+  <img src="data/error_1.jpeg" alt="Project Logo Cover" width="1500"/>
+</p>
+
+## ERROR 2 == HARI KRISHNA LOL
+
+<p align="center">
+  <img src="data/error2.jpeg" alt="Project Logo Cover" width="1500"/>
+</p>
+
+## ERROR 2 == HARI KRISHNA LOL
+
+<p align="center">
+  <img src="data/error3.jpeg" alt="Project Logo Cover" width="1500"/>
+</p>
+
+## ERROR 3 == HARI KRISHNA LOL
+
+<p align="center">
+  <img src="data/error1.jpeg" alt="Project Logo Cover" width="1500"/>
+</p>
+
+## No Error == HARI KRISHNA LOL
+
+<p align="center">
+  <img src="data/error1.jpeg" alt="Project Logo Cover" width="1500"/>
+</p>
 
 
 
