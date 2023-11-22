@@ -31,7 +31,8 @@ The CARLA simulator is an open-source platform designed to support the developme
 | ----- | ----------- |
 | **PHASE 1** | Install all basic/common libraries and `ROS Noetic` Setup. |
 | **PHASE 2** | Installation of the `Carla Simulator`. |
-| **PHASE 3** | Addressing any `errors` that may occur after installation. |
+| **PHASE 3** | Addressing any `errors` that may occur post-installation or during the initial run of Carla. |
+| **PHASE 4** | Installation of the `ROS-Bridge`. |
 
 ---------------------------------------------
 
@@ -99,11 +100,100 @@ The commands provided are useful for setting up a Linux-based development enviro
     cd ~/catkin_ws/
     catkin build
 
-# PHASE 2 = Installation of the `Carla Simulator`
-For this phase, you should refer to the official documentation provided by the Carla Simulator, which has proven effective for all users. Pay close attention and meticulously follow the instructions from the Before you begin section to Running CARLA.
+---------------------------------------------
 
-Should you encounter any issues, particularly during the final step of running Carla, PHASE 3 is designed to address those errors.
+# PHASE 2 = Installation of the `Carla Simulator`
+For this phase, you should refer to the official documentation provided by the Carla Simulator, which has proven effective for all users. <br> Pay close attention and meticulously follow the instructions from the `Before you begin` section to `Running CARLA`.
 
     https://carla.readthedocs.io/en/0.9.13/start_quickstart/
+    
+If you run into any problems, especially when trying to run Carla, that's what PHASE 3 is for—to help fix those issues.
+
+---------------------------------------------
+
+# PHASE 3 = Addressing any `errors` that may occur post-installation or during the initial run of Carla.
+In this phase, some individuals might encounter errors, whereas others might not, because errors do not occur universally. For a number of users, the process will be seamless from the start, but there will be cases where errors arise. <br> <br>
+To address this, we have outlined some common errors and their respective troubleshooting steps below, ensuring you have the guidance needed to resolve any issues that may come up while running Carla for the first time.
+
+## ERROR 1 == HARI KRISHNA LOL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
