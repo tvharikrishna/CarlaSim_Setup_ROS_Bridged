@@ -12,24 +12,98 @@ The CARLA simulator is an open-source platform designed to support the developme
 ---------------------------------------------
 
 ## Installation Prerequisites
-1) A compatible operating system: You will need an Ubuntu version that supports the specific version of CARLA you wish to install. For instance, CARLA `0.9.13` is compatible with `ROS-bridge` as well as `ROS-Noetic`, which operates on `Ubuntu 20.04`.
+1) **A compatible operating system:** You will need an ***Ubuntu version that supports*** the specific version of CARLA you wish to install. For instance, CARLA `0.9.13` is compatible with `ROS-bridge` as well as `ROS-Noetic`, which operates on `Ubuntu 20.04`.
 
-2) Operating System and GPU: Ensure that your operating system meets the necessary specifications to run CARLA, including a compatible `GPU` that the CARLA simulator can utilize. ***Set up and update the required graphics drivers accordingly***. In my case, if you enter the command `nvidia-smi`, it will display my NVIDIA drivers.
+2) **Operating System and GPU:** Ensure that your operating system meets the necessary specifications to run CARLA, including a compatible `GPU` that the CARLA simulator can utilize. ***Set up and update the required graphics drivers accordingly***. In my case, if you enter the command `nvidia-smi`, it will display my NVIDIA drivers.
 
-3) Clean and Fresh OS: This installation guide is designed to assist with a from-scratch installation, which means starting with a clean slate,         
- `(1 and 2 Completed)`, then installing ROS, required libraries, and finally the CARLA simulator. It is advisable to begin with no pre-installed packages to avoid conflicts with the installation steps outlined in this guide. If any packages are present, it's recommended to clear them before proceeding.
-
----------------------------------------------
+3) **Clean and Fresh OS:** This installation guide is designed to assist with a from-scratch installation, which means starting with a clean slate,         
+ `(1 and 2 Completed)`, then installing ROS, required libraries, and finally the CARLA simulator. It is ***advisable to begin with no pre-installed packages to avoid conflicts*** with the installation steps outlined in this guide.
 
 ---------------------------------------------
 
 ---------------------------------------------
 
-## Installation Phases
-The installation process for the CARLA simulator is divided into two phases.
-  #### PHASE 1: Install all necessary libraries and `ROS` related commands.
-  #### PHASE 2: Dedicated to the installation of `Carla Simulator`.
-  #### PHASE 3: Addressing any `errors` that may occur after installation.
+---------------------------------------------
+
+# Installation Phases
+
+| Phase | Description |
+| ----- | ----------- |
+| **PHASE 1** | Install all basic/common libraries and `ROS Noetic` Setup. |
+| **PHASE 2** | Installation of the `Carla Simulator`. |
+| **PHASE 3** | Addressing any `errors` that may occur after installation. |
 
 ---------------------------------------------
+
+# PHASE 1 = Install all essential libraries and set up ROS Noetic.
+The commands provided are useful for setting up a Linux-based development environment. They include updating the system, installing common tools and libraries, setting up Git, Python, and Visual Studio Code, and installing ROS Noetic. Although not all these steps are directly related to the CARLA simulator, they are necessary when configuring a fresh system to ensure that all dependencies and tools are in place for a smooth installation.
+
+
+    #!/bin/bash
+    
+    # System setup
+    echo "Update"
+    yes | sudo apt-get update
+    
+    echo "Upgrade"
+    yes | sudo apt-get upgrade
+    
+    echo "Installing Terminator"
+    yes | sudo apt install terminator
+    
+    echo "Installing tmux"
+    yes | sudo apt-get install tmux
+    
+    echo "Setting up SSH Server, net tools, GIT"
+    yes | sudo apt-get install openssh-server net-tools git htop
+    
+    echo "Github Credential Save"
+    git config --global credential.helper store
+    
+    echo "Installing pip and other python packages"
+    yes | sudo apt install python3-pip 
+    yes | pip3 install opencv-python
+    yes | pip3 install numpy
+    yes | pip3 install matplotlib
+    yes | pip3 install pandas
+    yes | pip3 install opencv-contrib-python
+    yes | pip3 install scipy
+    
+    echo "Installing VSCode"
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+    yes | sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+    sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+    rm -f packages.microsoft.gpg
+    yes | sudo apt install apt-transport-https
+    sudo apt-get update
+    yes | sudo apt install code # or code-insiders
+    
+    echo "Installing ROS Noetic"
+    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+    yes | sudo apt install curl # if you haven't already installed curl
+    curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+    sudo apt-get update
+    yes | sudo apt install ros-noetic-desktop-full
+    
+    sudo apt-get install -y ros-noetic-navigation ros-noetic-teb-local-planner* ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-gazebo-ros-control ros-noetic-ackermann-msgs ros-noetic-serial 
+    
+    sudo apt-get install -y ros-noetic-turtlebot3*
+    sudo apt-get install -y ros-noetic-rosserial*
+    sudo apt-get install -y ros-noetic-rosbridge-suite
+    sudo pip3 install -U catkin_tools
+    
+    echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+    source ~/.bashrc
+    
+    mkdir -p ~/catkin_ws/src
+    cd ~/catkin_ws/
+    catkin build
+
+# PHASE 2 = Installation of the `Carla Simulator`
+For this phase, you should refer to the official documentation provided by the Carla Simulator, which has proven effective for all users. Pay close attention and meticulously follow the instructions from the Before you begin section to Running CARLA.
+
+Should you encounter any issues, particularly during the final step of running Carla, PHASE 3 is designed to address those errors.
+
+    https://carla.readthedocs.io/en/0.9.13/start_quickstart/
+
 
