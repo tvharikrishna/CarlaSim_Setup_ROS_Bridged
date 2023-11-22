@@ -115,85 +115,97 @@ If you run into any problems, especially when trying to run Carla, that's what P
 In this phase, some individuals might encounter errors, whereas others might not, because errors do not occur universally. For a number of users, the process will be seamless from the start, but there will be cases where errors arise. <br> <br>
 To address this, we have outlined some common errors and their respective troubleshooting steps below, ensuring you have the guidance needed to resolve any issues that may come up while running Carla for the first time.
 
-## ERROR 1 == HARI KRISHNA LOL
+## `ERROR 1 ➞ Inadequate GPU Resources`
 
+<p align="center">
+  <img src="data/error_1.jpeg" alt="Project Logo Cover" width="700"/>
+</p>
 
+`SOLUTION`<br>
+• Reinstall the graphics card drivers.<br>
+• If already installed and Carla is not accessing them.<br>
+• Ensure you install the correct driver version for your laptop.<br>
 
+`About The Error` <br>
+The error suggests a problem with the Vulkan graphics API on an AMD GPU, indicating insufficient memory to execute a command and a loss of the device connection (VK_ERROR_DEVICE_LOST), leading to a segmentation fault (Signal 11). This typically points to issues such as inadequate GPU resources, outdated drivers, or a hardware malfunction. Ensuring that your system meets CARLA's requirements, updating your graphics drivers, and checking resource availability could help resolve the problem.
 
 
+## `ERROR 2 == Disable NVIDIA Vulkan Driver Permanently`
 
+<p align="center">
+  <img src="data/error 2.jpeg" alt="Project Logo Cover" width="700"/>
+</p>
 
+`SOLUTION`<br>
+• Navigated to `/usr/share/vulkan/icd.d/` which is the directory where Vulkan ICD (Installable Client Driver) JSON files are located.<br>
+• These files tell the Vulkan loader which drivers to load on the system.<br>
+• The user lists the files in that directory and then moves the `nvidia_icd.json` file to `nvidia_icd.json.backup` ***effectively disabling the NVIDIA Vulkan driver.*** <br>
 
+## `ERROR 3 == When "./CarlaUE4.sh -opengl" FAILS`
 
+<p align="center">
+  <img src="data/error 3.jpeg" alt="Project Logo Cover" width="700"/>
+</p>
 
+`About The Error` <br>
+• The use of the `-opengl` flag is intended to tell the application to use the OpenGL rendering engine instead of Vulkan. This can sometimes resolve issues related to Vulkan, especially if there are driver or compatibility problems with Vulkan on the system. <br>
 
+• However, in the screenshots I provided, attempting to run the CARLA simulator with the `-opengl` flag did not seem to fix the issue; the same X Error of failed request: BadMatch (invalid parameter attributes) error was still occurring. <br>
 
+• This suggests that the issue may not be with the graphics API specifically, but could be related to other configuration mismatches or issues between the application and the X server settings.
 
+`SOLUTION`<br>
+• The command `export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/nvidia_icd.json"` is used to set the `VK_ICD_FILENAMES` environment variable to point to the Nvidia Vulkan Installable Client Driver (ICD) configuration file. This tells the Vulkan loader to use the Nvidia driver for Vulkan support.
 
+• After setting this environment variable, the user then runs the CARLA simulator with the script ./CarlaUE4.sh. The use of && suggests that the simulator will only run if the export command succeeds.
 
+• The purpose of setting this variable might be to resolve a driver conflict or to force the application to use a specific graphics driver, particularly if there are multiple drivers installed on the system that could potentially handle Vulkan.
 
+<p align="center">
+  <img src="data/error_3_sol.jpeg" alt="Project Logo Cover" width="700"/>
+</p>
 
 
+## `ERROR 4 == No Module Named Carla` 
 
+<p align="center">
+  <img src="data/error_4.jpeg" alt="Project Logo Cover" width="700"/>
+</p>
 
+`SOLUTION`<br>
+• Add path to .bashrc -> `export PYTHONPATH=~/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.12-py3.7-linux-x86_64.egg:$PYTHONPATH` <br>
+• Check working directory <br>
+• Source bashrc file <br>
 
+## `No Error Free == Launch Successfull`
 
+<p align="center">
+  <img src="data/succeed.jpeg" alt="Project Logo Cover" width="700"/>
+</p>
 
 
+---------------------------------------------
 
 
+# PHASE 4 = Installation of the `ROS Bridge`
 
+After clearing all the errors, and confirming that the simulator is running smoothly, you should be able to launch 'python3 generate_traffic.py' without any issues. If you encounter any errors with the simulator in phase 2, please resolve them before proceeding. Do not proceed if you still have errors.
 
+Now, for the last step, we need to connect your Carla simulator with ROS. This can be achieved by installing the ROS Bridge for Carla. The following link provides straightforward instructions from the official documentation, making the installation process easy:
 
+    https://carla.readthedocs.io/projects/ros-bridge/en/latest/run_ros/#using-the-ros-bridge-in-synchronous-mode
 
+Please follow the instructions in the provided link to install the ROS Bridge for Carla.
 
+## `ERROR == numpy.bool or np.bool error in camera.py` 
+After installing ROS Bridge, when launching the 'rosbridge' or 'spawnobjects' launch files, you may or may not encounter an error. If you do encounter an error, the issue will likely be in the 'camera.py' script located in the 'rosbridge' Catkin workspace.
 
+`SOLUTION`<br>
+To resolve this, open the `camera.py` file and, at the end of the file, replace `numpy.bool` with `numpy.bool_`.
 
 
+---------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div align="center">
+    <p>  ☻  HAPPY AUTONOMOUS ☻  </p>
+</div>
