@@ -203,6 +203,14 @@ After installing ROS Bridge, when launching the 'rosbridge' or 'spawnobjects' la
 `SOLUTION`<br>
 To resolve this, open the `camera.py` file and, at the end of the file, replace `numpy.bool` with `numpy.bool_`.
 
+---------------------------------------------
+
+# Running Carla 
+All set! You are now ready to launch the CARLA simulator using the `ROS bridge` guide. Follow the commands provided for the ROS bridge to initiate the process. Now that everything is installed, we can run CARLA through the ROS bridge. Please refer to the documentation to learn how to run and use CARLA with ROS.
+
+Note: The regular commands for launching CARLA do not include the ROS bridge, so if you launch them, it will not be connected to ROS. Therefore, to work with CARLA in conjunction with ROS, you must follow the ROS-CARLA catkin workspace guide that I have attached below:
+
+    https://carla.readthedocs.io/projects/ros-bridge/en/latest/carla_manual_control/
 
 ---------------------------------------------
 
