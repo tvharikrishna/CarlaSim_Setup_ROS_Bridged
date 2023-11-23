@@ -214,6 +214,18 @@ Note: The regular commands for launching CARLA do not include the ROS bridge, so
 
 ---------------------------------------------
 
+## My Video Demonstration:
+
+<p align="center">
+  
+  <a href="https://www.linkedin.com/posts/tvharikrishna_autonomousvehicles-autonomousdriving-autonomous-activity-7133480417608773634-QacB?utm_source=share&utm_medium=member_desktop">
+  <img src="https://img.shields.io/badge/Video- Introduction to Carla & Setup Guide-blue" alt="Video"/>
+  </a>
+</p>
+
+---------------------------------------------
+
+
 <div align="center">
     <p>  ☻  HAPPY AUTONOMOUS ☻  </p>
 </div>
