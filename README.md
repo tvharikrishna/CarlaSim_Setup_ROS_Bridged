@@ -1,7 +1,8 @@
 <div align="center">
   <h1>Introduction to Carla Simulator & Setup Guide
 </h1>
-  
+</div>
+
 <br>
 
 <p align="center">
