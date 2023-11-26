@@ -1,4 +1,8 @@
-# Introduction to Carla Simulator & Setup Guide
+<div align="center">
+  <h1>Introduction to Carla Simulator & Setup Guide
+</h1>
+  
+<br>
 
 <p align="center">
   <img src="data/project_title.png" alt="Project Logo Cover" width="1500"/>
@@ -6,12 +10,12 @@
 
 ---------------------------------------------
 
-## What is Carla Simulator
+##  ★ What is Carla Simulator
 The CARLA simulator is an open-source platform designed to support the development, training, and validation of autonomous driving systems. It provides a highly realistic and flexible simulation environment with customizable scenarios, built on Unreal Engine and OpenDRIVE. CARLA includes a range of features such as a sensor suite, traffic manager, and the ability to distribute workloads across multiple GPUs for enhanced performance. It's widely used for generating synthetic training data not only for autonomous vehicles but also for other robotics applications, simulating real-world urban and highway environments
 
 ---------------------------------------------
 
-## Installation Prerequisites
+##  ★ Installation Prerequisites
 1) **A compatible operating system:** You will need an ***Ubuntu version that supports*** the specific version of CARLA you wish to install. For instance, CARLA `0.9.13` is compatible with `ROS-bridge` as well as `ROS-Noetic`, which operates on `Ubuntu 20.04`.
 
 2) **Operating System and GPU:** Ensure that your operating system meets the necessary specifications to run CARLA, including a compatible `GPU` that the CARLA simulator can utilize. ***Set up and update the required graphics drivers accordingly***. In my case, if you enter the command `nvidia-smi`, it will display my NVIDIA drivers.
@@ -25,7 +29,7 @@ The CARLA simulator is an open-source platform designed to support the developme
 
 ---------------------------------------------
 
-# Installation Phases
+#  ★ Installation Phases
 
 | Phase | Description |
 | ----- | ----------- |
@@ -205,7 +209,7 @@ To resolve this, open the `camera.py` file and, at the end of the file, replace 
 
 ---------------------------------------------
 
-# Running Carla 
+#  ★ Running Carla 
 All set! You are now ready to launch the CARLA simulator using the `ROS bridge` guide. Follow the commands provided for the ROS bridge to initiate the process. Now that everything is installed, we can run CARLA through the ROS bridge. Please refer to the documentation to learn how to run and use CARLA with ROS.
 
 Note: The regular commands for launching CARLA do not include the ROS bridge, so if you launch them, it will not be connected to ROS. Therefore, to work with CARLA in conjunction with ROS, you must follow the ROS-CARLA catkin workspace guide that I have attached below:
