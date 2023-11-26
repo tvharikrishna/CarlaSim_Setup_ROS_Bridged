@@ -218,7 +218,7 @@ Note: The regular commands for launching CARLA do not include the ROS bridge, so
 
 ---------------------------------------------
 
-## My Video Demonstration:
+## ★ My Video Demonstration:
 
 <p align="center">
   
@@ -228,7 +228,6 @@ Note: The regular commands for launching CARLA do not include the ROS bridge, so
 </p>
 
 ---------------------------------------------
-
 
 <div align="center">
     <p>  ☻  HAPPY AUTONOMOUS ☻  </p>
